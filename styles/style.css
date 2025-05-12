@@ -1,0 +1,585 @@
+:root {
+    --logoColor: #FFB800;
+    --logoTextColor: #D1D0C5;
+    --textColor: #646669;
+    --backgroundColor: #323437;
+    --subBackgroundColor: #2C2E31;
+}
+
+body{
+    transition: background-color 0.1s ease-in-out, color 100ms ease-in-out;
+    background-color: var(--backgroundColor);
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Mono", monospace;
+}
+
+.screen{
+    height: calc(100vh - 4rem);
+}
+
+a{
+    text-decoration: none;
+}
+
+.logo{
+    width: 3rem;
+    height: 2.4rem;
+    margin-right: 0.5rem;
+    color: var(--logoColor);
+}
+
+.text-primary{
+    color: var(--logoTextColor);
+}
+
+.title{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.text-panel, .text-footer{
+    color: var(--textColor);
+    font-size: 0.8rem;
+    transition: color 100ms ease-in-out;
+}
+
+.button-mode{
+    color: var(--textColor);
+}
+
+/* VERSI LAMA */
+/* .game{
+    position: relative;
+    display: flex;
+} */
+
+.game {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.count{
+    color: var(--logoColor);
+    position: absolute;
+    top: -3rem;
+    font-size: 2rem;
+    margin: 0.25em 0.3em;
+}
+
+.reload{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    /* top: 50%; */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: -4rem;
+    font-size: 2rem;
+
+
+    z-index: 10;
+}
+
+.result-restart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.restart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    width: 4rem;
+    cursor: pointer;
+}
+
+/* VERSI LAMA */
+/* .text-board{
+    color: var(--textColor);
+    font-size: 2rem;
+    Width ganti jadi px atau rem
+    width: 80vw;
+    height: 20vh;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+} */
+
+.text-board {
+    color: var(--textColor);
+    font-size: 2rem;
+    width: 94rem;
+    height: 10rem;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    line-height: 2rem;
+    align-content: flex-start;
+}
+
+.flex, .y-center, .x-center, .flex-between, .center{
+    display: flex;
+}
+
+.column{
+    flex-direction: column;
+}
+
+.flex-between{
+    justify-content: space-between;
+}
+
+.y-center, .center{
+    align-items: center;
+}
+
+.x-center, .center{
+    justify-content: center;
+}
+
+.gap-2{
+    gap: 2rem;
+}
+
+.gap-1{
+    gap: 1rem;
+}
+
+.gap-s{
+    gap: 0.2rem;
+}
+
+.gap-m{
+    gap: 0.3rem;
+}
+
+.my-5-3{
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+}
+
+.px-12{
+    padding-inline: 12rem;
+}
+
+.px-8{
+    padding-inline: 8rem;
+}
+
+.py-2{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.icon-small{
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--textColor);
+    cursor: pointer;
+}
+
+.width-full{
+    width: 100%;
+}
+
+.height-full{
+    height: 100%;
+}
+
+.panel{
+    position: absolute;
+    top: 0;
+    width: fit-content;
+    margin-inline: auto;
+    background-color: var(--subBackgroundColor);
+    /* padding: 0.4rem 3rem; */
+    border-radius: 0.4rem;
+    /* max-width: max-content; */
+    transition: max-width 200ms ease-in-out, width 200ms ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.button-panel, .text-footer{
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: var(--textColor);
+}
+
+.button-icon{
+    width: 1rem;
+    height: 1rem;
+    transition: color 100ms ease-in-out;
+}
+
+.button-icon-2{
+    width: 1rem;
+    height: 1rem;
+}
+
+.button-panel:hover .text-panel{
+    color: var(--logoTextColor);
+}
+
+.icon-hover:hover, .restart:hover .icon-hover {
+    color: var(--logoTextColor);
+}
+
+.button-panel:first-child{
+    margin-left: 0.5rem;
+}
+
+.button-panel:last-child{
+    margin-right: 0.5rem;
+}
+
+.mr-s{
+    margin-right: 0.5rem;
+}
+
+.spacer{
+    border: 3px solid var(--backgroundColor);
+    border-radius: 1rem;
+    margin-inline: 0rem 0.5rem;
+}
+
+.main-game{
+    position: relative;
+    height: 100%;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--backgroundColor);
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+    color: var(--textColor);
+    box-shadow: 0 0 0 .2em var(--subBackgroundColor);
+    position: relative;
+    width: 30rem;
+}
+
+.close-button {
+    position: absolute;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.theme-title{
+    margin-top: 0;
+    padding-bottom: 5px;
+}
+
+.correct {
+    color: var(--logoTextColor);
+}
+
+.incorrect {
+    color: rgb(214, 7, 7);
+}
+
+.extra {
+    color: rgb(88, 0, 0);
+}
+
+/* VERSI LAMA */
+/* .word {
+    display: inline;
+    margin: 0.3em;
+    line-height: 1em;
+} */
+
+#logo{
+    cursor: pointer;
+}
+
+.word {
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0.2em 0.3em;
+    line-height: 1;
+    vertical-align: top;
+    height: calc(30% - 0.3em);
+}
+
+.hidden {
+    opacity: 0;
+}
+
+/* CARA KE 1 */
+.error {
+    /* GANTI JADI WARNA ERROR (NANTI DTAMBAHIN VAR COLOR BARU) */
+    text-decoration: underline rgb(214, 7, 7) 3px;
+}
+
+
+/* CARA KE 2 BUAT BIKIN GARIS ERROR BIAR JARAK KEBAWAH DIKIT */
+/* .error {
+    position: relative;
+    text-decoration: none;
+}
+
+.error::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: rgb(214, 7, 7);
+} */
+
+#cursor {
+    width: 2px;
+    border-radius: 1rem;
+    height: 2rem;
+    background-color: var(--logoColor);
+    position: fixed;
+    transition: left 80ms linear;
+}
+
+.typing {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* BIAR GK BISA DI SELECT HIGHLIGHT */
+body {
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.pause {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--logoTextColor);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    backdrop-filter: blur(7px);
+    z-index: 10;
+}
+
+/* INI UNTUK CHARTNYA */
+#result {
+    display: none;
+}
+
+.result {
+    width: 100%;
+    max-width: auto;
+    margin: 0 0 0 5rem;
+    position: relative;
+}
+
+.chart {
+    position: relative;
+    height: 300px;
+    border-left: 2px solid var(--textColor);
+    border-bottom: 2px solid var(--textColor);
+    padding: 10px;
+    /* margin-left: 1rem; */
+}
+
+.chart .line {
+    position: absolute;
+    height: 2px;
+    background-color: var(--logoColor);
+    transform-origin: top left;
+}
+
+.chart .point {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--logoColor);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.chart .label {
+    position: absolute;
+    transform: translate(-50%, 10px);
+    font-size: 12px;
+    color: var(--textColor);
+}
+
+.chart .y-axis-label,
+.chart .x-axis-label {
+    position: absolute;
+    font-size: 14px;
+    color: var(--textColor);
+}
+
+.chart .y-axis-label {
+    left: -120px;
+    top: 30%;
+    transform: rotate(-90deg) translate(-50%, 0);
+    transform-origin: center;
+}
+
+.chart .x-axis-label {
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.chart .y-indicator {
+    position: absolute;
+    left: -10px;
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.chart .y-indicator .label {
+    position: absolute;
+    left: -30px;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: var(--textColor);
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.05s ease-out;
+}
+
+.fade-in {
+opacity: 1;
+transition: opacity 0.05s ease-in;
+}
+
+.result-title{
+    font-size: 2rem;
+    color: var(--textColor);
+}
+
+.result-value{
+    font-size: 5rem;
+    color: var(--logoColor);
+    line-height: 1;
+}
+
+.more-result-title{
+    font-size: 1.5rem;
+    color: var(--textColor);
+}
+
+.more-result-value{
+    font-size: 1.5rem;
+    color: var(--logoColor);
+}
+
+.colorList{
+    padding: 0.3rem 2rem;
+}
+
+.colorList:hover{
+    color: var(--backgroundColor);
+    cursor: pointer;
+    background-color: var(--logoTextColor);
+}
+
+.pallete{
+    display: flex;
+    border-radius: 1rem;
+    justify-content: space-evenly;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: var(--subBackgroundColor);
+    width: 4rem;
+    padding: 0.3rem 0.4rem;
+}
+
+.colorPallete{
+    border-radius: 1rem;
+    width: 13px;
+    height: 13px;
+    background-color: var(--logoColor);
+}
+
+.pcOnly{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10000;
+    background-color: var(--backgroundColor);
+    display: none;
+    color: var(--logoColor);
+}
+
+.icon-pc{
+    width: 30%;
+    height: auto;
+}
+
+@media screen and (max-width: 1439px), (max-height: 499px) {
+    .pcOnly{
+        display: block;
+    }
+
+    .pc{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1700px){
+    .text-board{
+        width: 80rem;
+    }
+}
+
+/* @media screen and (max-width: 1500px) {
+    .text-board {
+        width: 80rem;
+    }
+} */
